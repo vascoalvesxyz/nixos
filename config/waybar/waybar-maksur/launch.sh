@@ -1,0 +1,12 @@
+#!/bin/sh
+
+CONFIG="$HOME/.config/waybar/config"
+STYLE="$HOME/.config/waybar/style.css"
+
+if [[ $(pgrep -x "waybar") = "waybar" ]]; then
+	killall waybar
+else
+	if [[ $(pgrep -x "waybar") = "" ]]; then
+		waybar -c $CONFIG -s $STYLE > /dev/null 2>&1 &
+	fi
+fi

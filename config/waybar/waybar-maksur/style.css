@@ -1,0 +1,66 @@
+*{
+  font-family: "Hack Nerd Font Mono", sans-serif;
+  font-size: 15px;
+}
+
+#waybar { 
+  background-color: #3c3835; 
+  color: #d4be98; 
+}
+
+#workspaces {
+	background-color = #3c3836;
+}
+#workspaces button {
+	background-color = #3c3836;
+}
+#workspaces button.active
+#workspaces button.empty
+#workspaces button.persistent
+#workspaces button.special
+#workspaces button.visible
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#pulseaudio,
+#tray,
+#mode,
+#window,
+#workspaces {
+    padding: 0px 1ex;
+}
+
+#cpu {
+	background: #3d4220;
+	/* border-bottom: 2px outset #a9b665; */
+}
+
+#memory {
+	background: #424a3e;
+}
+
+#pulseaudio {
+	background: #0f3a42;
+}
+
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    font-size: 15px;
+    background-color: #333333;
+    padding: 5px;
+}
+
+#idle_inhibitor.activated {
+    background-color: #285577;
+}

@@ -4,6 +4,7 @@ let
 devPackages = with pkgs; [
 	home-manager
 	# Dev
+	git
 	vim
 	neovim
 	ripgrep
@@ -33,6 +34,8 @@ utils = with pkgs; [
 	brightnessctl
 	wmctrl
 
+	keepassxc
+
 	# Audio
 	alsa-utils
 	audacity
@@ -60,6 +63,7 @@ apps = with pkgs; [
 
 	# WM, Terminal, Menus, etc.
 	dwm
+	dwmblocks
 	dmenu
 	st
 	alacritty
@@ -86,6 +90,12 @@ apps = with pkgs; [
 
 		 st = prev.st.overrideAttrs (old: {
 			 src = ./packages/st ;
+			 buildInputs = old.buildInputs ++ [ pkgs.pkg-config ];
+		 });
+
+		 dwmblocks = prev.dwmblocks.overrideAttrs (old: {
+			 src = ./packages/dwmblocks ;
+			 buildInputs = old.buildInputs ++ [ pkgs.pkg-config pkgs.xorg.libxcb ];
 		 });
 	}) ];
 
